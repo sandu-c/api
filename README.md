@@ -173,7 +173,10 @@ You can install Hygieia by using a docker image from docker hub. This section gi
 	Navigate to the api docker hub location [here](https://hub.docker.com/r/hygieiadoc/api/tags) and download the latest image (most recent version is preferred).  Tags can also be used, if needed.
 
 *	**Step 2: Run with Docker**
-
+```shell
+mvn clean package docker:build -DskipTests=true -DdockerDirecroty=./ -DimageName=hygieia-api```
+	
+```
 	```Docker run -e SKIP_PROPERTIES_BUILDER=true -v properties_location:/hygieia/config image_name```
 	
 	- <code>-e SKIP_PROPERTIES_BUILDER=true</code>  <br />
